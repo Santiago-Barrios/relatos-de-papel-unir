@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "vite",
     "start": "cp src/environments/.env.mocked .env 2>/dev/null || copy src\\environments\\.env.mocked .env 2>nul & vite --mode mocked",
-    "start:local": "cp src/environments/.env.local .env 2>/dev/null || copy src\\environments\\.env.local .env 2>nul & vite --mode local",
+    "start:local": "cp src/environments/.env.local .env 2>/dev/null || copy src\\environments\\.env.local .env 2>nul & vite --mode localdev",
     "start:dev": "cp src/environments/.env.development .env 2>/dev/null || copy src\\environments\\.env.development .env 2>nul & vite --mode development",
     "start:test": "cp src/environments/.env.test .env 2>/dev/null || copy src\\environments\\.env.test .env 2>nul & vite --mode test",
     "build": "tsc -b && vite build",
-    "build:local": "cp src/environments/.env.local .env 2>/dev/null || copy src\\environments\\.env.local .env 2>nul & tsc -b && vite build --mode local",
+    "build:local": "cp src/environments/.env.local .env 2>/dev/null || copy src\\environments\\.env.local .env 2>nul & tsc -b && vite build --mode localdev",
     "build:dev": "cp src/environments/.env.development .env 2>/dev/null || copy src\\environments\\.env.development .env 2>nul & tsc -b && vite build --mode development",
     "build:test": "cp src/environments/.env.test .env 2>/dev/null || copy src\\environments\\.env.test .env 2>nul & tsc -b && vite build --mode test",
     "build:production": "cp src/environments/.env.production .env 2>/dev/null || copy src\\environments\\.env.production .env 2>nul & tsc -b && vite build --mode production",
