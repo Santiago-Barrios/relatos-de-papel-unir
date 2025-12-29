@@ -27,6 +27,7 @@
     /* Path Aliases */
     "baseUrl": "./",
     "paths": {
+      "@/*": ["./src/*"],
       "@modules/*": ["src/modules/*"],
       "@utils/*": ["src/utils/*"],
       "@common/*": ["src/common/*"],
