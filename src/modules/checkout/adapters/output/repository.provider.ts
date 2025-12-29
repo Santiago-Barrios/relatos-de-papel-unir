@@ -1,10 +1,10 @@
 import {
   providerFactory,
   EnvironmentEnum,
-} from "@common/utils/provider-factory";
-import type { CheckoutOutputRepositoryInterface } from "../../domain/ports/checkout.output-repository.interface";
-import { CheckoutRepositoryMock } from "./checkout.repository.mock";
-import { CheckoutHttpRepository } from "./checkout-http.repository";
+} from '@common/utils/provider-factory';
+import type { CheckoutOutputRepositoryInterface } from '../../domain/ports/checkout.output-repository.interface';
+import { CheckoutRepositoryMock } from './checkout.repository.mock';
+import { CheckoutHttpRepository } from './checkout-http.repository';
 
 export const checkoutRepository: CheckoutOutputRepositoryInterface =
   providerFactory({

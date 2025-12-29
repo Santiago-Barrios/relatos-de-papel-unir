@@ -1,4 +1,4 @@
-import { BookModel } from "../book.model";
+import { BookModel } from '../book.model';
 
 export interface BookInputServiceInterface {
   getBooks(): Promise<BookModel[]>;

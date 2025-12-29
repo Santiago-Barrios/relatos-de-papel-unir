@@ -1,5 +1,5 @@
-import type { CategoryOutputRepositoryInterface } from "../domain/ports/category.output-repository.interface";
-import { CategoryModel } from "../domain/category.model";
+import type { CategoryOutputRepositoryInterface } from '../domain/ports/category.output-repository.interface';
+import { CategoryModel } from '../domain/category.model';
 
 export class CategoryService {
   private readonly repository: CategoryOutputRepositoryInterface;
@@ -20,4 +20,3 @@ export class CategoryService {
     return await this.repository.getCategoryBySlug(slug);
   }
 }
-

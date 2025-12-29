@@ -1,6 +1,6 @@
-import type { BookOutputRepositoryInterface } from "../../domain/ports/book.output-repository.interface";
-import { BookModel } from "../../domain/book.model";
-import { bookRepositoryMockData } from "./book-data.repository.mock";
+import type { BookOutputRepositoryInterface } from '../../domain/ports/book.output-repository.interface';
+import { BookModel } from '../../domain/book.model';
+import { bookRepositoryMockData } from './book-data.repository.mock';
 
 export class BookRepositoryMock implements BookOutputRepositoryInterface {
   private books: BookModel[] = bookRepositoryMockData;
@@ -10,9 +10,9 @@ export class BookRepositoryMock implements BookOutputRepositoryInterface {
   }
 
   async getBookById(id: number): Promise<BookModel> {
-    const book = this.books.find((b) => b.id === id);
+    const book = this.books.find(b => b.id === id);
     if (!book) {
-      throw new Error("Book not found");
+      throw new Error('Book not found');
     }
     return book;
   }
@@ -20,7 +20,7 @@ export class BookRepositoryMock implements BookOutputRepositoryInterface {
   async searchBooks(searchTerm: string): Promise<BookModel[]> {
     const searchLower = searchTerm.toLowerCase();
     return this.books.filter(
-      (book) =>
+      book =>
         book.title.toLowerCase().includes(searchLower) ||
         book.author.toLowerCase().includes(searchLower) ||
         book.description.toLowerCase().includes(searchLower)

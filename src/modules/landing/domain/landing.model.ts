@@ -1,6 +1,6 @@
 export class LandingModel {
   public id: number = 0;
-  public title: string = "";
+  public title: string = '';
   public createdAt: Date = new Date();
   public updatedAt: Date = new Date();
 

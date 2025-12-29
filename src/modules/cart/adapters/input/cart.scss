@@ -25,7 +25,9 @@
     border: 2px solid #d32f2f;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
 
     &:hover {
       background-color: #d32f2f;
@@ -154,7 +156,9 @@
     border: 2px solid #d32f2f;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,4 +218,3 @@
     }
   }
 }
-

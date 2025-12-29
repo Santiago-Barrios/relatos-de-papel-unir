@@ -1,11 +1,11 @@
-import { BookService } from "@modules/books/application/book.service";
-import type { BookInputServiceInterface } from "@modules/books/domain/ports/book.input-service.interface";
-import type { BookOutputRepositoryInterface } from "@modules/books/domain/ports/book.output-repository.interface";
-import { CategoryService } from "@modules/categories/application/category.service";
-import type { CategoryInputServiceInterface } from "@modules/categories/domain/ports/category.input-service.interface";
-import type { CategoryOutputRepositoryInterface } from "@modules/categories/domain/ports/category.output-repository.interface";
-import { createContext, useContext } from "react";
-import type { ReactNode } from "react";
+import { BookService } from '@modules/books/application/book.service';
+import type { BookInputServiceInterface } from '@modules/books/domain/ports/book.input-service.interface';
+import type { BookOutputRepositoryInterface } from '@modules/books/domain/ports/book.output-repository.interface';
+import { CategoryService } from '@modules/categories/application/category.service';
+import type { CategoryInputServiceInterface } from '@modules/categories/domain/ports/category.input-service.interface';
+import type { CategoryOutputRepositoryInterface } from '@modules/categories/domain/ports/category.output-repository.interface';
+import { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 
 // Interface principal que contendrá todos los servicios
 interface Services {
@@ -41,7 +41,7 @@ export const DIProvider = ({ children, repositories }: DIProviderProps) => {
 export const useDI = () => {
   const context = useContext(DIContext);
   if (!context) {
-    throw new Error("useDI debe ser usado dentro de un DIProvider");
+    throw new Error('useDI debe ser usado dentro de un DIProvider');
   }
   return context;
 };

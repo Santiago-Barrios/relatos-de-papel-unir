@@ -1,13 +1,13 @@
-import { BaseHttpRepository } from "@common/adapters/output/http/base-http-repository";
-import type { CategoryOutputRepositoryInterface } from "../../domain/ports/category.output-repository.interface";
-import { CategoryModel } from "../../domain/category.model";
+import { BaseHttpRepository } from '@common/adapters/output/http/base-http-repository';
+import type { CategoryOutputRepositoryInterface } from '../../domain/ports/category.output-repository.interface';
+import { CategoryModel } from '../../domain/category.model';
 
 export class CategoryHttpRepository
   extends BaseHttpRepository<CategoryModel>
   implements CategoryOutputRepositoryInterface
 {
   async getCategories(): Promise<CategoryModel[]> {
-    const data = await this.get<CategoryModel[]>("/categories");
+    const data = await this.get<CategoryModel[]>('/categories');
     return data.map((category: any) => CategoryModel.create(category));
   }
 
@@ -21,4 +21,3 @@ export class CategoryHttpRepository
     return CategoryModel.create(data);
   }
 }
-

@@ -55,7 +55,7 @@ export const Home = () => {
         </aside>
         <div className='home__main-container__books'>
           <div className='home__main-container__books__books-grid'>
-            {books?.map((book) => (
+            {books?.map(book => (
               <Link
                 key={book.id}
                 to={`/book/${book.id}`}

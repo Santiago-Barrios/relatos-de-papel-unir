@@ -31,7 +31,7 @@ export const Landing = () => {
         <div className='landing__featured'>
           <h2 className='landing__featured-title'>Libros Destacados</h2>
           <div className='landing__books-grid'>
-            {featuredBooks.map((book) => (
+            {featuredBooks.map(book => (
               <Link
                 key={book.id}
                 to={`/book/${book.id}`}

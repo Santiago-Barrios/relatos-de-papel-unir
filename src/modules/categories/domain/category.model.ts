@@ -1,8 +1,8 @@
 export class CategoryModel {
   public id: number = 0;
-  public name: string = "";
-  public description: string = "";
-  public slug: string = "";
+  public name: string = '';
+  public description: string = '';
+  public slug: string = '';
   public createdAt: Date = new Date();
   public updatedAt: Date = new Date();
 
@@ -14,4 +14,3 @@ export class CategoryModel {
     return new CategoryModel(init);
   }
 }
-

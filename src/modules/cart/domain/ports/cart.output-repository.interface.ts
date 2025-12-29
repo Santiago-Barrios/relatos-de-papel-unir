@@ -1,4 +1,4 @@
-import { CartModel } from "../cart.model";
+import { CartModel } from '../cart.model';
 
 export interface CartOutputRepositoryInterface {
   saveCart(cart: CartModel): Promise<CartModel>;

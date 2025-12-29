@@ -1,4 +1,4 @@
-import { BookModel } from "@modules/books";
+import { BookModel } from '@modules/books';
 
 export class CartItemModel {
   public book!: BookModel;

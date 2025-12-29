@@ -1,5 +1,5 @@
-import type { BookOutputRepositoryInterface } from "../domain/ports/book.output-repository.interface";
-import { BookModel } from "../domain/book.model";
+import type { BookOutputRepositoryInterface } from '../domain/ports/book.output-repository.interface';
+import { BookModel } from '../domain/book.model';
 
 export class BookService {
   private readonly repository: BookOutputRepositoryInterface;

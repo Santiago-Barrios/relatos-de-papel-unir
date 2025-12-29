@@ -1,5 +1,5 @@
-import type { HomeOutputRepositoryInterface } from "../domain/ports/home.output-repository.interface";
-import { HomeModel } from "../domain/home.model";
+import type { HomeOutputRepositoryInterface } from '../domain/ports/home.output-repository.interface';
+import { HomeModel } from '../domain/home.model';
 
 export class HomeService {
   private readonly repository: HomeOutputRepositoryInterface;

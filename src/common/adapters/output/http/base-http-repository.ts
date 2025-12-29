@@ -1,4 +1,4 @@
-import { envManager } from "@common/utils/env-manager";
+import { envManager } from '@common/utils/env-manager';
 
 /**
  * Clase base abstracta para repositorios HTTP
@@ -8,7 +8,7 @@ export abstract class BaseHttpRepository<T> {
   protected readonly baseUrl: string;
 
   constructor() {
-    this.baseUrl = envManager.get("API_URL") || "http://localhost:3000/api";
+    this.baseUrl = envManager.get('API_URL') || 'http://localhost:3000/api';
   }
 
   /**
@@ -29,9 +29,9 @@ export abstract class BaseHttpRepository<T> {
    */
   protected async post<R = T>(endpoint: string, body?: unknown): Promise<R> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: body ? JSON.stringify(body) : undefined,
     });
@@ -48,9 +48,9 @@ export abstract class BaseHttpRepository<T> {
    */
   protected async put<R = T>(endpoint: string, body?: unknown): Promise<R> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      method: "PUT",
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: body ? JSON.stringify(body) : undefined,
     });
@@ -67,9 +67,9 @@ export abstract class BaseHttpRepository<T> {
    */
   protected async patch<R = T>(endpoint: string, body?: unknown): Promise<R> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      method: "PATCH",
+      method: 'PATCH',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: body ? JSON.stringify(body) : undefined,
     });
@@ -86,7 +86,7 @@ export abstract class BaseHttpRepository<T> {
    */
   protected async delete(endpoint: string): Promise<void> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      method: "DELETE",
+      method: 'DELETE',
     });
 
     if (!response.ok) {

@@ -52,7 +52,7 @@ export const NavBar = () => {
         </div>
         <div className='nav-bar__container__content__options__actions'>
           <TooltipProvider>
-            {options.map((item) => (
+            {options.map(item => (
               <Tooltip key={item.id}>
                 <TooltipTrigger asChild>
                   <i className={`fa-solid ${item.icon}`}></i>

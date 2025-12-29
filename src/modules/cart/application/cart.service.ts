@@ -1,5 +1,5 @@
-import type { CartOutputRepositoryInterface } from "../domain/ports/cart.output-repository.interface";
-import { CartModel } from "../domain/cart.model";
+import type { CartOutputRepositoryInterface } from '../domain/ports/cart.output-repository.interface';
+import { CartModel } from '../domain/cart.model';
 
 export class CartService {
   private readonly repository: CartOutputRepositoryInterface;

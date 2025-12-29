@@ -1,5 +1,5 @@
-import type { CheckoutOutputRepositoryInterface } from "../domain/ports/checkout.output-repository.interface";
-import { CheckoutModel } from "../domain/checkout.model";
+import type { CheckoutOutputRepositoryInterface } from '../domain/ports/checkout.output-repository.interface';
+import { CheckoutModel } from '../domain/checkout.model';
 
 export class CheckoutService {
   private readonly repository: CheckoutOutputRepositoryInterface;
