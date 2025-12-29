@@ -44,7 +44,8 @@ export const BookDetail = () => {
   return (
     <div className='book-detail'>
       <Link to='/books' className='book-detail__back-link'>
-        ← Volver al catálogo
+        <i className='fa-solid fa-left-long'></i>
+        <span className='book-detail__back-link__text'>Volver al catálogo</span>
       </Link>
       <div className='book-detail__container'>
         <div className='book-detail__image-section'>

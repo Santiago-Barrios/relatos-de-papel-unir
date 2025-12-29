@@ -20,10 +20,14 @@ export const SideMenu = () => {
 
         <div className='side-menu__container__categories'>
           {categories?.map(category => (
-            <span className='side-menu__container__categories__category' key={category.id}> {category.name} </span>
+            <span
+              className='side-menu__container__categories__category'
+              key={category.id}
+            >
+              {category.name}
+            </span>
           ))}
         </div>
-
       </div>
     </div>
   );
