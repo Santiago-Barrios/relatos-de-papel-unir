@@ -1,7 +1,7 @@
-import { BookModel } from "@modules/books";
-import { CartItemModel } from "../domain/cart.model";
-import { createContext, useContext, useState } from "react";
-import type { ReactNode } from "react";
+import { BookModel } from '@modules/books';
+import { CartItemModel } from '../domain/cart.model';
+import { createContext, useContext, useState } from 'react';
+import type { ReactNode } from 'react';
 
 interface CartContextType {
   items: CartItemModel[];
@@ -17,10 +17,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<CartItemModel[]>([]);
 
   const addToCart = (book: BookModel) => {
-    setItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.book.id === book.id);
+    setItems(prevItems => {
+      const existingItem = prevItems.find(item => item.book.id === book.id);
       if (existingItem) {
-        return prevItems.map((item) =>
+        return prevItems.map(item =>
           item.book.id === book.id
             ? CartItemModel.create({ ...item, quantity: item.quantity + 1 })
             : item
@@ -31,9 +31,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const removeFromCart = (bookId: number) => {
-    setItems((prevItems) =>
-      prevItems.filter((item) => item.book.id !== bookId)
-    );
+    setItems(prevItems => prevItems.filter(item => item.book.id !== bookId));
   };
 
   const clearCart = () => {
@@ -59,7 +57,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
+    throw new Error('useCart must be used within a CartProvider');
   }
   return context;
 };

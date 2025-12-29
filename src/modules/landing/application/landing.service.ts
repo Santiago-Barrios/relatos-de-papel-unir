@@ -1,5 +1,5 @@
-import type { LandingOutputRepositoryInterface } from "../domain/ports/landing.output-repository.interface";
-import { LandingModel } from "../domain/landing.model";
+import type { LandingOutputRepositoryInterface } from '../domain/ports/landing.output-repository.interface';
+import { LandingModel } from '../domain/landing.model';
 
 export class LandingService {
   private readonly repository: LandingOutputRepositoryInterface;

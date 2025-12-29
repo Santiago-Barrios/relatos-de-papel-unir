@@ -1,0 +1,68 @@
+import { CategoryModel } from '../../domain/category.model';
+
+export const categoryRepositoryMockData: CategoryModel[] = [
+  CategoryModel.create({
+    id: 1,
+    name: 'Ficción',
+    description: 'Novelas y obras de ficción literaria',
+    slug: 'ficcion',
+    createdAt: new Date('2024-01-15T10:00:00Z'),
+    updatedAt: new Date('2024-01-15T10:00:00Z'),
+  }),
+  CategoryModel.create({
+    id: 2,
+    name: 'Ciencia Ficción',
+    description: 'Obras de ciencia ficción y fantasía',
+    slug: 'ciencia-ficcion',
+    createdAt: new Date('2024-01-16T10:00:00Z'),
+    updatedAt: new Date('2024-01-16T10:00:00Z'),
+  }),
+  CategoryModel.create({
+    id: 3,
+    name: 'Romance',
+    description: 'Novelas románticas y de amor',
+    slug: 'romance',
+    createdAt: new Date('2024-01-17T10:00:00Z'),
+    updatedAt: new Date('2024-01-17T10:00:00Z'),
+  }),
+  CategoryModel.create({
+    id: 4,
+    name: 'Misterio',
+    description: 'Thrillers y novelas de misterio',
+    slug: 'misterio',
+    createdAt: new Date('2024-01-18T10:00:00Z'),
+    updatedAt: new Date('2024-01-18T10:00:00Z'),
+  }),
+  CategoryModel.create({
+    id: 5,
+    name: 'Histórica',
+    description: 'Novelas históricas y biografías',
+    slug: 'historica',
+    createdAt: new Date('2024-01-19T10:00:00Z'),
+    updatedAt: new Date('2024-01-19T10:00:00Z'),
+  }),
+  CategoryModel.create({
+    id: 6,
+    name: 'Literatura Clásica',
+    description: 'Obras clásicas de la literatura universal',
+    slug: 'literatura-clasica',
+    createdAt: new Date('2024-01-20T10:00:00Z'),
+    updatedAt: new Date('2024-01-20T10:00:00Z'),
+  }),
+  CategoryModel.create({
+    id: 7,
+    name: 'Juvenil',
+    description: 'Libros dirigidos a jóvenes y adolescentes',
+    slug: 'juvenil',
+    createdAt: new Date('2024-01-21T10:00:00Z'),
+    updatedAt: new Date('2024-01-21T10:00:00Z'),
+  }),
+  CategoryModel.create({
+    id: 8,
+    name: 'No Ficción',
+    description: 'Libros de no ficción, ensayos y documentales',
+    slug: 'no-ficcion',
+    createdAt: new Date('2024-01-22T10:00:00Z'),
+    updatedAt: new Date('2024-01-22T10:00:00Z'),
+  }),
+];

@@ -1,0 +1,112 @@
+.nav-bar {
+  display: flex;
+  width: 100%;
+  &__container {
+    padding: 5px;
+
+    &__content {
+      i {
+        font-size: 1.5rem;
+        color: var(--background);
+        cursor: pointer;
+      }
+
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+      background-color: var(--nav-bar-bg);
+      padding: 4px 8px;
+
+      &__information {
+        grid-column: span 7;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+
+        &__site-name {
+          grid-column: span 2;
+          display: flex;
+          align-items: center;
+          color: var(--background);
+        }
+        &__site-direction {
+          grid-column: span 2;
+          display: flex;
+          align-items: center;
+          color: var(--background);
+        }
+        &__search {
+          grid-column: span 8;
+          border-radius: 8px;
+          background-color: var(--background);
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      &__options {
+        grid-column: span 5;
+        display: flex;
+        gap: 25px;
+        justify-content: end;
+        &__car {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          &__items {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 18px;
+            height: 18px;
+            padding: 0 5px;
+            background-color: var(--destructive);
+            border: 2px solid var(--background);
+            border-radius: 50%;
+            font-size: 0.7rem;
+            font-weight: 700;
+            line-height: 1;
+            z-index: 10;
+          }
+        }
+
+        &__actions {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          &__tooltip {
+            padding: 2px 4px;
+            font-size: 15px;
+          }
+        }
+
+        &__personal {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          &__user {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            gap: 5px;
+            color: var(--background);
+            :hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

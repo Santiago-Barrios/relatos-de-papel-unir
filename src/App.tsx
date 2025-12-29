@@ -1,9 +1,11 @@
-import { QueryClientProvider } from "@tanstack/react-query";
-import { DIProvider } from "./common/context/di-context";
-import { bookRepository } from "./modules/books";
-import { CartProvider } from "./modules/cart/context/cart-context";
-import AppRoutes from "./routes/pages/app-routes";
-import { queryClient } from "./utils/config/query-client.config";
+import { QueryClientProvider } from '@tanstack/react-query';
+import { DIProvider } from './common/context/di-context';
+import { bookRepository } from './modules/books';
+import { categoryRepository } from './modules/categories';
+import { CartProvider } from './modules/cart/context/cart-context';
+import AppRoutes from './routes/pages/app-routes';
+import { queryClient } from './utils/config/query-client.config';
+import { NavBar } from './components/nav-bar/nav-bar';
 
 //TODO revisar lo del cart provider
 function App() {
@@ -12,10 +14,12 @@ function App() {
       <DIProvider
         repositories={{
           bookRepository,
+          categoryRepository,
         }}
       >
         <CartProvider>
-          <div className="app">
+          <div className='app'>
+            <NavBar />
             <AppRoutes />
           </div>
         </CartProvider>
