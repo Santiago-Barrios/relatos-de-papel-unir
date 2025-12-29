@@ -1,4 +1,5 @@
 .home {
+  padding: 0px 10px;
   &__title {
     font-size: 2.5rem;
     font-weight: bold;
@@ -33,7 +34,7 @@
         flex-direction: column;
         background: white;
         border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px var(--primary);
         overflow: hidden;
         transition:
           transform 0.2s,
@@ -51,49 +52,53 @@
         width: 100%;
         height: 300px;
         overflow: hidden;
-        background: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: fill;
+          object-position: center;
+          display: block;
         }
       }
 
       &__book-info {
-        padding: 1.5rem;
+        font-size: var(--font-size-title);
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-      }
+        padding: 5px 10px;
 
-      &__book-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #333;
-        margin: 0;
-        line-height: 1.3;
-      }
+        &__book-title {
+          font-size: var(--font-size-subtitle);
+          font-weight: 600;
+          color: #333;
+          margin: 0;
+          line-height: 1.3;
+        }
 
-      &__book-author {
-        font-size: 0.9rem;
-        color: #666;
-        margin: 0;
-      }
+        &__book-author {
+          font-size: var(--font-size-paragraph);
+          color: #666;
+          margin: 0;
+        }
 
-      &__book-price {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #1976d2;
-        margin: 0.5rem 0;
-      }
+        &__book-price {
+          font-size: var(--font-size-subtitle);
+          font-weight: 500;
+          color: var(--information);
+        }
 
-      &__book-description {
-        font-size: 0.9rem;
-        color: #555;
-        line-height: 1.5;
-        margin: 0;
-        flex-grow: 1;
+        &__book-description {
+          font-size: var(--font-size-paragraph);
+          color: #555;
+          line-height: 1.5;
+          margin: 0;
+          flex-grow: 1;
+        }
       }
 
       &__loading,

@@ -56,6 +56,7 @@
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
+  --information: #1976d2;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -79,6 +80,11 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --nav-bar-bg: #182b3a;
+
+  /* Sizes */
+  --font-size-title: 30px;
+  --font-size-subtitle: 20px;
+  --font-size-paragraph: 15px;
 }
 
 .dark {

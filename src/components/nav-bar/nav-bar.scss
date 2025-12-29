@@ -29,13 +29,17 @@
           display: flex;
           align-items: center;
           color: var(--background);
+          font-size: var(--font-size-paragraph);
         }
+
         &__site-direction {
           grid-column: span 2;
           display: flex;
           align-items: center;
           color: var(--background);
+          font-size: var(--font-size-paragraph);
         }
+
         &__search {
           grid-column: span 8;
           border-radius: 8px;
@@ -50,6 +54,7 @@
         display: flex;
         gap: 25px;
         justify-content: end;
+
         &__car {
           position: relative;
           width: 40px;
@@ -86,7 +91,7 @@
 
           &__tooltip {
             padding: 2px 4px;
-            font-size: 15px;
+            font-size: var(--font-size-paragraph);
           }
         }
 
@@ -101,6 +106,11 @@
             cursor: pointer;
             gap: 5px;
             color: var(--background);
+
+            &__text {
+              font-size: var(--font-size-paragraph);
+            }
+
             :hover {
               text-decoration: underline;
             }

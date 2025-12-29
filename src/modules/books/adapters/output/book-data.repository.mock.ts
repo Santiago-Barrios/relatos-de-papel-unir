@@ -7,7 +7,8 @@ export const bookRepositoryMockData: BookModel[] = [
     author: 'Gabriel García Márquez',
     code: 'ISBN-001',
     price: 25.99,
-    image: 'https://images.example.com/cien-anos-soledad.jpg',
+    image:
+      'https://res.cloudinary.com/djyftxmll/image/upload/v1767027126/100_cbusbr.png',
     description:
       'Una de las obras más importantes de la literatura latinoamericana que narra la historia de la familia Buendía a lo largo de siete generaciones.',
     createdAt: new Date('2024-01-15T10:00:00Z'),
@@ -19,7 +20,8 @@ export const bookRepositoryMockData: BookModel[] = [
     author: 'Miguel de Cervantes',
     code: 'ISBN-002',
     price: 19.99,
-    image: 'https://images.example.com/quijote.jpg',
+    image:
+      'https://res.cloudinary.com/djyftxmll/image/upload/v1767027357/quijote_qdx3n5.png',
     description:
       'La obra cumbre de la literatura española que narra las aventuras de Don Quijote y su fiel escudero Sancho Panza.',
     createdAt: new Date('2024-01-16T10:00:00Z'),
@@ -31,7 +33,8 @@ export const bookRepositoryMockData: BookModel[] = [
     author: 'George Orwell',
     code: 'ISBN-003',
     price: 22.5,
-    image: 'https://images.example.com/1984.jpg',
+    image:
+      'https://res.cloudinary.com/djyftxmll/image/upload/v1767027126/100_cbusbr.png',
     description:
       'Una distopía que describe un futuro totalitario donde el Gran Hermano controla cada aspecto de la vida de las personas.',
     createdAt: new Date('2024-01-17T10:00:00Z'),
@@ -43,7 +46,8 @@ export const bookRepositoryMockData: BookModel[] = [
     author: 'Gabriel García Márquez',
     code: 'ISBN-004',
     price: 24.99,
-    image: 'https://images.example.com/amor-colera.jpg',
+    image:
+      'https://res.cloudinary.com/djyftxmll/image/upload/v1767027356/colera_rbyazx.png',
     description:
       'Una historia de amor que se desarrolla a lo largo de más de cincuenta años, desde la juventud hasta la vejez.',
     createdAt: new Date('2024-01-18T10:00:00Z'),
@@ -55,7 +59,8 @@ export const bookRepositoryMockData: BookModel[] = [
     author: 'Carlos Ruiz Zafón',
     code: 'ISBN-005',
     price: 21.99,
-    image: 'https://images.example.com/sombra-viento.jpg',
+    image:
+      'https://res.cloudinary.com/djyftxmll/image/upload/v1767027126/100_cbusbr.png',
     description:
       'Una novela misteriosa ambientada en la Barcelona de posguerra que sigue a un joven en busca de un libro maldito.',
     createdAt: new Date('2024-01-19T10:00:00Z'),
@@ -67,7 +72,8 @@ export const bookRepositoryMockData: BookModel[] = [
     author: 'Dan Brown',
     code: 'ISBN-006',
     price: 18.99,
-    image: 'https://images.example.com/codigo-davinci.jpg',
+    image:
+      'https://res.cloudinary.com/djyftxmll/image/upload/v1767027356/daVinci_pb4oip.png',
     description:
       'Un thriller que combina misterio, historia y religión en una trama llena de secretos y conspiraciones.',
     createdAt: new Date('2024-01-20T10:00:00Z'),
@@ -79,7 +85,8 @@ export const bookRepositoryMockData: BookModel[] = [
     author: 'J.K. Rowling',
     code: 'ISBN-007',
     price: 16.99,
-    image: 'https://images.example.com/harry-potter.jpg',
+    image:
+      'https://res.cloudinary.com/djyftxmll/image/upload/v1767027356/harry_ixoq80.png',
     description:
       'El primer libro de la saga que narra las aventuras del joven mago Harry Potter en el mundo de la magia.',
     createdAt: new Date('2024-01-21T10:00:00Z'),
@@ -91,7 +98,8 @@ export const bookRepositoryMockData: BookModel[] = [
     author: 'J.R.R. Tolkien',
     code: 'ISBN-008',
     price: 28.99,
-    image: 'https://images.example.com/senor-anillos.jpg',
+    image:
+      'https://res.cloudinary.com/djyftxmll/image/upload/v1767027356/anillos_rlluvo.png',
     description:
       'Una épica aventura en la Tierra Media donde un hobbit debe destruir un anillo de poder para salvar el mundo.',
     createdAt: new Date('2024-01-22T10:00:00Z'),
@@ -103,46 +111,11 @@ export const bookRepositoryMockData: BookModel[] = [
     author: 'Jane Austen',
     code: 'ISBN-009',
     price: 17.99,
-    image: 'https://images.example.com/orgullo-prejuicio.jpg',
+    image:
+      'https://res.cloudinary.com/djyftxmll/image/upload/v1767027356/colera_rbyazx.png',
     description:
       'Una novela romántica que explora las relaciones sociales y el matrimonio en la Inglaterra del siglo XIX.',
     createdAt: new Date('2024-01-23T10:00:00Z'),
     updatedAt: new Date('2024-01-23T10:00:00Z'),
-  }),
-  BookModel.create({
-    id: 10,
-    title: 'Crónica de una muerte anunciada',
-    author: 'Gabriel García Márquez',
-    code: 'ISBN-010',
-    price: 15.99,
-    image: 'https://images.example.com/cronica-muerte.jpg',
-    description:
-      'Una novela que narra el asesinato de Santiago Nasar desde múltiples perspectivas en un pequeño pueblo.',
-    createdAt: new Date('2024-01-24T10:00:00Z'),
-    updatedAt: new Date('2024-01-24T10:00:00Z'),
-  }),
-  BookModel.create({
-    id: 11,
-    title: 'El alquimista',
-    author: 'Paulo Coelho',
-    code: 'ISBN-011',
-    price: 14.99,
-    image: 'https://images.example.com/alquimista.jpg',
-    description:
-      'La historia de un joven pastor que emprende un viaje en busca de un tesoro y descubre su leyenda personal.',
-    createdAt: new Date('2024-01-25T10:00:00Z'),
-    updatedAt: new Date('2024-01-25T10:00:00Z'),
-  }),
-  BookModel.create({
-    id: 12,
-    title: 'Los juegos del hambre',
-    author: 'Suzanne Collins',
-    code: 'ISBN-012',
-    price: 19.99,
-    image: 'https://images.example.com/juegos-hambre.jpg',
-    description:
-      'Una distopía donde jóvenes deben luchar a muerte en un reality show televisado para sobrevivir.',
-    createdAt: new Date('2024-01-26T10:00:00Z'),
-    updatedAt: new Date('2024-01-26T10:00:00Z'),
   }),
 ];

@@ -1,13 +1,18 @@
+import { SideMenu } from '@/components/side-menu/side-menu';
 import {
-  useBookServices,
-  useCategoryServices,
-} from '@common/context/di-context';
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { useBookServices } from '@common/context/di-context';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 
 export const Home = () => {
   const bookService = useBookServices();
-  const categoriesService = useCategoryServices();
 
   const {
     data: books,
@@ -16,15 +21,6 @@ export const Home = () => {
   } = useQuery({
     queryKey: ['books'],
     queryFn: () => bookService.getBooks(),
-  });
-
-  const {
-    data: categories,
-    isLoading: loadingCategories,
-    error: categoriesError,
-  } = useQuery({
-    queryKey: ['categories'],
-    queryFn: () => categoriesService.getCategories(),
   });
 
   if (isLoading) {
@@ -49,9 +45,7 @@ export const Home = () => {
 
       <div className='home__main-container'>
         <aside className='home__main-container__side-menu'>
-          {JSON.stringify(categories)}
-          <span>Drama</span>
-          <span>Acción</span>
+          <SideMenu />
         </aside>
         <div className='home__main-container__books'>
           <div className='home__main-container__books__books-grid'>
@@ -61,21 +55,33 @@ export const Home = () => {
                 to={`/book/${book.id}`}
                 className='home__main-container__books__book-card'
               >
-                {book.image && (
-                  <div className='home__main-container__books__book-image'>
-                    <img src={book.image} alt={book.title} />
-                  </div>
-                )}
-                <div className='home__main-container__books__book-info'>
-                  <h2 className='home__book-title'>{book.title}</h2>
-                  <p className='home__book-author'>{book.author}</p>
-                  <p className='home__book-price'>${book.price.toFixed(2)}</p>
-                  <p className='home__book-description'>
-                    {book.description.length > 100
-                      ? `${book.description.substring(0, 100)}...`
-                      : book.description}
-                  </p>
-                </div>
+                <Card style={{ height: '100%' }}>
+                  <CardContent>
+                    {book.image && (
+                      <div className='home__main-container__books__book-image'>
+                        <img src={book.image} alt={book.title} />
+                      </div>
+                    )}
+                  </CardContent>
+                  <CardFooter>
+                    <div className='home__main-container__books__book-info'>
+                      <span className='home__main-container__books__book-info__book-title'>
+                        {book.title}
+                      </span>
+                      <span className='home__main-container__books__book-info__book-author'>
+                        {book.author}
+                      </span>
+                      <span className='home__main-container__books__book-info__book-price'>
+                        ${book.price.toFixed(2)}
+                      </span>
+                      <span className='home__main-container__books__book-info__book-description'>
+                        {book.description.length > 100
+                          ? `${book.description.substring(0, 100)}...`
+                          : book.description}
+                      </span>
+                    </div>
+                  </CardFooter>
+                </Card>
               </Link>
             ))}
           </div>
