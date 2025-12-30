@@ -1,0 +1,152 @@
+.book-reviews-section {
+
+  &__container {
+    padding: 1.5rem;
+  }
+
+  &__summary {
+    margin-bottom: 1.5rem;
+  }
+
+  &__rating-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__total {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+  }
+
+  &__distribution {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__distribution-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__distribution-label {
+    font-size: 0.875rem;
+    width: 3rem;
+  }
+
+  &__distribution-bar {
+    flex: 1;
+    height: 0.5rem;
+    background-color: var(--color-muted);
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  &__distribution-fill {
+    height: 100%;
+    background-color: #facc15;
+  }
+
+  &__distribution-percentage {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+    width: 4rem;
+    text-align: right;
+  }
+
+  &__separator {
+    margin: 1.5rem 0;
+  }
+
+  &__reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__review-header {
+    margin-bottom: 0.5rem;
+  }
+
+  &__review-info {
+    flex: 1;
+  }
+
+  &__review-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__review-name {
+    font-weight: 600;
+    color: var(--color-foreground);
+  }
+
+  &__verified-icon {
+    height: 1rem;
+    width: 1rem;
+    color: #16a34a;
+  }
+
+  &__verified-text {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+  }
+
+  &__review-rating {
+    margin-bottom: 0.5rem;
+  }
+
+  &__review-date {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+    margin-bottom: 0.5rem;
+  }
+
+  &__review-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    color: var(--color-foreground);
+  }
+
+  &__review-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__helpful-button {
+    height: 2rem;
+    font-size: 0.75rem;
+
+    &--positive {
+      color: #ea580c;
+
+      &:hover {
+        color: #c2410c;
+        background-color: #fff7ed;
+      }
+    }
+  }
+
+  &__action-icon {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.25rem;
+  }
+
+  &__helpful-count {
+    margin-left: 0.5rem;
+    color: var(--color-muted-foreground);
+  }
+
+  &__review-separator {
+    margin-top: 1rem;
+  }
+}

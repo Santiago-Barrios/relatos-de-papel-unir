@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/cart-context';
+import { useCart } from '../../context/cart-context';
+import { CartItemModel } from '../../domain/cart.model';
 
 export const Cart = () => {
   const { items, removeFromCart, clearCart, getTotal } = useCart();
@@ -28,7 +29,7 @@ export const Cart = () => {
       </div>
 
       <div className='cart__items'>
-        {items.map(item => (
+        {items.map((item: CartItemModel) => (
           <div key={item.book.id} className='cart__item'>
             <div className='cart__item-image'>
               {item.book.image ? (

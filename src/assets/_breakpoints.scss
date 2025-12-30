@@ -1,0 +1,63 @@
+// ============================================
+// BREAKPOINTS - Media Queries Reutilizables
+// ============================================
+// 
+// Uso en cualquier componente SCSS:
+// @use '../../assets/breakpoints' as *;
+//
+// Ejemplo:
+// .mi-componente {
+//   font-size: 16px;
+//   
+//   @include mobile {
+//     font-size: 14px;
+//   }
+//   
+//   @include tablet {
+//     font-size: 15px;
+//   }
+//   
+//   @include desktop {
+//     font-size: 18px;
+//   }
+// }
+
+// Breakpoints variables
+$mobile-max: 600px;
+$tablet-max: 900px;
+
+// Mobile: hasta 600px
+@mixin mobile {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+
+// Tablet: desde 601px hasta 900px
+@mixin tablet {
+  @media (min-width: ($mobile-max + 1px)) and (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+// Desktop: desde 901px en adelante
+@mixin desktop {
+  @media (min-width: ($tablet-max + 1px)) {
+    @content;
+  }
+}
+
+// Tablet y Desktop (desde 601px en adelante)
+@mixin tablet-and-up {
+  @media (min-width: ($mobile-max + 1px)) {
+    @content;
+  }
+}
+
+// Mobile y Tablet (hasta 900px) - útil para ocultar en desktop
+@mixin mobile-and-tablet {
+  @media (max-width: $tablet-max) {
+    @content;
+  }
+}
+

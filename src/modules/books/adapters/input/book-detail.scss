@@ -3,69 +3,153 @@
   max-width: 1200px;
   margin: 0 auto;
 
-  &__loading,
-  &__error {
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.2rem;
+  &__loading-skeleton {
+    height: 2.5rem;
+    width: 8rem;
+    margin-bottom: 1.5rem;
   }
 
-  &__error {
-    color: #d32f2f;
+  &__error-content {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  &__error-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-destructive);
   }
 
   &__back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    text-decoration: none;
+  }
+
+  &__back-button {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-bottom: 2rem;
-    color: var(--information);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-    &__text {
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+    gap: 0.5rem;
+  }
+
+  &__back-icon {
+    height: 1rem;
+    width: 1rem;
   }
 
   &__container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       grid-template-columns: 1fr;
     }
   }
 
-  &__image-section {
+  &__left-column {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__image-content {
+    padding: 1.5rem;
   }
 
   &__image {
     width: 100%;
-    max-width: 400px;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   &__image-placeholder {
     width: 100%;
-    max-width: 400px;
     height: 500px;
-    background: #f5f5f5;
+    background-color: var(--color-muted);
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    color: #999;
-    font-size: 1.1rem;
+    color: var(--color-muted-foreground);
+    font-size: 1.125rem;
+  }
+
+  &__image-skeleton {
+    width: 100%;
+    height: 500px;
+  }
+
+  &__right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--color-foreground);
+    line-height: 1.2;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__author {
+    font-size: 1.125rem;
+    color: var(--color-muted-foreground);
+  }
+
+  &__meta-separator {
+    color: var(--color-muted-foreground);
+  }
+
+  &__code {
+    font-size: 1.125rem;
+    color: var(--color-muted-foreground);
+  }
+
+  &__rating-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &__reviews-count {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+  }
+
+  &__separator {
+    // Separator styles handled by shadcn
+  }
+
+  &__description-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-foreground);
+  }
+
+  &__description-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-muted-foreground);
+  }
+
+  &__author-section {
+    margin-bottom: 2rem;
   }
 
   &__info-section {
@@ -74,59 +158,12 @@
     gap: 1rem;
   }
 
-  &__title {
-    font-size: var(--font-size-title);
-    font-weight: bold;
-    color: #333;
-    margin: 0;
-    line-height: 1.2;
-  }
+  &__info-skeleton {
+    height: 1.5rem;
+    width: 100%;
 
-  &__author {
-    font-size: var(--font-size-subtitle);
-    color: #666;
-    margin: 0;
-  }
-
-  &__code {
-    font-size: var(--font-size-title);
-    color: #999;
-    margin: 0;
-  }
-
-  &__price {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #1976d2;
-    margin: 1rem 0;
-  }
-
-  &__description {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    margin: 1rem 0;
-  }
-
-  &__add-button {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: white;
-    background-color: #1976d2;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    margin-top: 1rem;
-    max-width: 300px;
-
-    &:hover {
-      background-color: #1565c0;
-    }
-
-    &:active {
-      background-color: #0d47a1;
+    &--title {
+      height: 2rem;
     }
   }
 }
