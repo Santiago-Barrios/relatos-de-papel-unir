@@ -1,12 +1,5 @@
 import { SideMenu } from '@/components/side-menu/side-menu';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { useBookServices } from '@common/context/di-context';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
@@ -41,13 +34,13 @@ export const Home = () => {
 
   return (
     <div className='home'>
-      <h1 className='home__title'>Catálogo de Libros</h1>
-
       <div className='home__main-container'>
         <aside className='home__main-container__side-menu'>
           <SideMenu />
         </aside>
         <div className='home__main-container__books'>
+          <h1 className='home__title'>Catálogo de Libros</h1>
+
           <div className='home__main-container__books__books-grid'>
             {books?.map(book => (
               <Link

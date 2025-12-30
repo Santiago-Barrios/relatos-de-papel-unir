@@ -1,3 +1,5 @@
+@use '../../assets/_breakpoints' as *;
+
 .nav-bar {
   display: flex;
   width: 100%;
@@ -130,6 +132,133 @@
 
             :hover {
               text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      // Tablet styles
+      @include tablet {
+        gap: 0.75rem;
+        padding: 4px 6px;
+
+        &__information {
+          grid-column: span 8;
+          gap: 0.75rem;
+
+          &__site-name {
+            grid-column: span 3;
+            font-size: calc(var(--font-size-paragraph) * 0.9);
+          }
+
+          &__site-direction {
+            grid-column: span 3;
+            font-size: calc(var(--font-size-paragraph) * 0.85);
+            
+            &__text {
+              font-size: calc(var(--font-size-paragraph) * 0.85);
+            }
+          }
+
+          &__search {
+            grid-column: span 6;
+          }
+        }
+
+        &__options {
+          grid-column: span 4;
+          gap: 15px;
+
+          &__actions {
+            gap: 10px;
+          }
+
+          &__personal {
+            gap: 8px;
+
+            &__user {
+              &__text {
+                font-size: calc(var(--font-size-paragraph) * 0.9);
+              }
+            }
+          }
+        }
+      }
+
+      // Mobile styles
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 8px;
+
+        i {
+          font-size: 1.25rem;
+        }
+
+        &__information {
+          grid-column: span 1;
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+
+          &__site-name {
+            grid-column: span 1;
+            flex-direction: row;
+            gap: 8px;
+            font-size: calc(var(--font-size-paragraph) * 0.95);
+            justify-content: center;
+          }
+
+          &__site-direction {
+            grid-column: span 1;
+            justify-content: center;
+            font-size: calc(var(--font-size-paragraph) * 0.85);
+            
+            &__text {
+              font-size: calc(var(--font-size-paragraph) * 0.8);
+            }
+          }
+
+          &__search {
+            grid-column: span 1;
+            width: 100%;
+          }
+        }
+
+        &__options {
+          grid-column: span 1;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
+          padding-top: 0.5rem;
+
+          &__car {
+            width: 35px;
+            height: 35px;
+          }
+
+          &__actions {
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          &__personal {
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+            align-items: center;
+
+            &__user {
+              flex-direction: column;
+              gap: 4px;
+
+              &__text {
+                font-size: calc(var(--font-size-paragraph) * 0.85);
+              }
+            }
+
+            &__language {
+              margin-top: 4px;
             }
           }
         }
