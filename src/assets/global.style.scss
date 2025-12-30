@@ -1,3 +1,6 @@
+// Breakpoints - available globally
+@forward './breakpoints';
+
 // Modules styles - @forward must be at the top
 @forward '../modules/home/adapters/input/index.scss';
 @forward '../modules/books/adapters/input/index.scss';

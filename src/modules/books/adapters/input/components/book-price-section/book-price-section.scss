@@ -1,0 +1,120 @@
+.book-price-section {
+  &__discount-card {
+    margin-bottom: 1rem;
+  }
+
+  &__discount-content {
+    padding: 1rem;
+  }
+
+  &__info {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+  }
+
+  &__separator {
+    color: var(--color-muted-foreground);
+  }
+
+  &__shipping {
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #16a34a;
+  }
+
+  &__price-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__original-price {
+    font-size: 1.125rem;
+    color: var(--color-muted-foreground);
+    text-decoration: line-through;
+  }
+
+  &__badge {
+    font-size: 0.75rem;
+  }
+
+  &__current-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-foreground);
+  }
+
+  &__purchase-content {
+    padding: 1rem;
+  }
+
+  &__availability {
+    margin-bottom: 0.75rem;
+  }
+
+  &__availability-text {
+    font-size: 0.875rem;
+
+    &--high {
+      color: #16a34a;
+    }
+
+    &--medium {
+      color: #ea580c;
+    }
+
+    &--low {
+      color: var(--color-destructive);
+    }
+  }
+
+  &__final-price {
+    margin-bottom: 1rem;
+
+    span {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--color-foreground);
+    }
+  }
+
+  &__buy-button {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  &__shipping-info {
+    font-size: 0.75rem;
+    color: var(--color-muted-foreground);
+    margin-bottom: 1rem;
+  }
+
+  &__shipping-link {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__action-button {
+    flex: 1;
+  }
+
+  &__icon {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
+  }
+}
