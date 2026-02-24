@@ -2,18 +2,25 @@ import { SideMenu } from '@/components/side-menu/side-menu';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { useBookServices } from '@common/context/di-context';
 import { useQuery } from '@tanstack/react-query';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 export const Home = () => {
   const bookService = useBookServices();
+  const [searchParams] = useSearchParams();
+  const searchTerm = searchParams.get('q') || '';
 
   const {
     data: books,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ['books'],
-    queryFn: () => bookService.getBooks(),
+    queryKey: ['books', searchTerm],
+    queryFn: () => {
+      if (searchTerm.trim()) {
+        return bookService.searchBooks(searchTerm.trim());
+      }
+      return bookService.getBooks();
+    },
   });
 
   if (isLoading) {
