@@ -1,12 +1,17 @@
 import { useCart } from '@modules/cart/context/cart-context';
+import { useCheckoutServices } from '@common/context/di-context';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 export const Checkout = () => {
-  const { items, getTotal } = useCart();
+  const { items, getTotal, clearCart } = useCart();
+  const checkoutService = useCheckoutServices();
+  const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     nombre: '',
     apellidos: '',
@@ -25,9 +30,24 @@ export const Checkout = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Procesando pago...', formData);
+    setIsSubmitting(true);
+    setError(null);
+    try {
+      const purchaseItems = items.map(item => ({
+        bookId: item.book.id,
+        quantity: item.quantity,
+      }));
+      await checkoutService.processCheckout(purchaseItems);
+      clearCart();
+      navigate('/books');
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Error al procesar la compra';
+      setError(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (items.length === 0) {
@@ -319,12 +339,18 @@ export const Checkout = () => {
                 </div>
               </div>
 
+              {error && (
+                <p className='checkout__main-container__summary-section__error'>
+                  {error}
+                </p>
+              )}
               <Button
                 onClick={handleSubmit}
                 className='checkout__main-container__summary-section__confirm-button'
                 size='lg'
+                disabled={isSubmitting}
               >
-                Confirmar Compra
+                {isSubmitting ? 'Procesando...' : 'Confirmar Compra'}
               </Button>
             </CardContent>
           </Card>

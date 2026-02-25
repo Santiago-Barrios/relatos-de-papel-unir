@@ -1,4 +1,5 @@
 import type { CheckoutOutputRepositoryInterface } from '../domain/ports/checkout.output-repository.interface';
+import type { PurchaseItem } from '../domain/ports/checkout.input-service.interface';
 import { CheckoutModel } from '../domain/checkout.model';
 
 export class CheckoutService {
@@ -8,7 +9,7 @@ export class CheckoutService {
     this.repository = repository;
   }
 
-  async processCheckout(): Promise<CheckoutModel> {
-    return await this.repository.processCheckout();
+  async processCheckout(items: PurchaseItem[]): Promise<CheckoutModel> {
+    return await this.repository.processCheckout(items);
   }
 }

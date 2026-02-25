@@ -7,17 +7,17 @@ export class CategoryHttpRepository
   implements CategoryOutputRepositoryInterface
 {
   async getCategories(): Promise<CategoryModel[]> {
-    const data = await this.get<CategoryModel[]>('/categories');
+    const data = await this.get<CategoryModel[]>('/search/api/v1/categories');
     return data.map((category: any) => CategoryModel.create(category));
   }
 
   async getCategoryById(id: number): Promise<CategoryModel> {
-    const data = await this.get<CategoryModel>(`/categories/${id}`);
+    const data = await this.get<CategoryModel>(`/search/api/v1/categories/${id}`);
     return CategoryModel.create(data);
   }
 
   async getCategoryBySlug(slug: string): Promise<CategoryModel> {
-    const data = await this.get<CategoryModel>(`/categories/slug/${slug}`);
+    const data = await this.get<CategoryModel>(`/search/api/v1/categories/slug/${slug}`);
     return CategoryModel.create(data);
   }
 }
