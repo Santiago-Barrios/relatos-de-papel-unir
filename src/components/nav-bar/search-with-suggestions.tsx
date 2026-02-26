@@ -19,7 +19,7 @@ export const SearchWithSuggestions = ({
   value,
   onChange,
   onSearch,
-  placeholder = 'Título, Autor o ISBN',
+  placeholder = 'Título, Autor, Descripción, Biografía y Categoría',
   className,
 }: SearchWithSuggestionsProps) => {
   const bookService = useBookServices();
