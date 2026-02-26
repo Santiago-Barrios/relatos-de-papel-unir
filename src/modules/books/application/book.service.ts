@@ -1,4 +1,6 @@
 import type { BookOutputRepositoryInterface } from '../domain/ports/book.output-repository.interface';
+import type { BookSearchResponse } from '../domain/aggregation.model';
+import type { SearchFilters } from '../domain/search-filters.model';
 import { BookModel } from '../domain/book.model';
 
 export class BookService {
@@ -16,7 +18,7 @@ export class BookService {
     return await this.repository.getBookById(id);
   }
 
-  async searchBooks(searchTerm: string): Promise<BookModel[]> {
-    return await this.repository.searchBooks(searchTerm);
+  async searchBooks(filters: SearchFilters): Promise<BookSearchResponse> {
+    return await this.repository.searchBooks(filters);
   }
 }
