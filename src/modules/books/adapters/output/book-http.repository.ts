@@ -73,16 +73,35 @@ export class BookHttpRepository
     if (filters.priceMax != null) params.set('priceMax', String(filters.priceMax));
     params.set('isVisible', String(filters.isVisible ?? true));
     params.set('aggregate', String(filters.aggregate ?? true));
+    params.set('page', String(filters.page ?? 0));
+    params.set('size', String(filters.size ?? 20));
 
     const queryString = params.toString();
     const data = await this.get<{
       books: BookBackendDto[];
       aggregations: Record<string, { key: string; count: number; uri?: string }[]>;
+      totalElements?: number;
+      totalPages?: number;
     }>(`/search/api/v1/books/search${queryString ? `?${queryString}` : ''}`);
 
     return {
       books: data.books.map(mapToBookModel),
       aggregations: data.aggregations ?? {},
+      totalElements: data.totalElements,
+      totalPages: data.totalPages,
     };
+  }
+
+  async getSuggestions(query: string): Promise<string[]> {
+    if (!query.trim()) return [];
+    try {
+      const params = new URLSearchParams({ q: query.trim() });
+      const data = await this.get<string[] | { suggestions: string[] }>(
+        `/search/api/v1/books/suggest?${params.toString()}`
+      );
+      return Array.isArray(data) ? data : data.suggestions ?? [];
+    } catch {
+      return [];
+    }
   }
 }

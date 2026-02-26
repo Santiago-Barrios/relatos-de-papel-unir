@@ -6,4 +6,5 @@ export interface BookOutputRepositoryInterface {
   getBooks(): Promise<BookModel[]>;
   getBookById(id: number): Promise<BookModel>;
   searchBooks(filters: SearchFilters): Promise<BookSearchResponse>;
+  getSuggestions(query: string): Promise<string[]>;
 }

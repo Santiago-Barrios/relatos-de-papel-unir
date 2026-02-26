@@ -21,4 +21,8 @@ export class BookService {
   async searchBooks(filters: SearchFilters): Promise<BookSearchResponse> {
     return await this.repository.searchBooks(filters);
   }
+
+  async getSuggestions(query: string): Promise<string[]> {
+    return await this.repository.getSuggestions(query);
+  }
 }

@@ -48,6 +48,29 @@ export class BookRepositoryMock implements BookOutputRepositoryInterface {
       aggregations.category = Array.from(categoryCounts.entries()).map(([key, count]) => ({ key, count }));
     }
 
-    return { books: filtered, aggregations };
+    const totalElements = filtered.length;
+    const page = Math.max(0, filters.page ?? 0);
+    const size = Math.max(1, filters.size ?? 20);
+    const start = page * size;
+    const paginatedBooks = filtered.slice(start, start + size);
+    const totalPages = Math.ceil(totalElements / size) || 0;
+
+    return {
+      books: paginatedBooks,
+      aggregations,
+      totalElements,
+      totalPages,
+    };
+  }
+
+  async getSuggestions(query: string): Promise<string[]> {
+    if (!query.trim()) return [];
+    const searchLower = query.toLowerCase();
+    const suggestions = new Set<string>();
+    this.books.forEach(book => {
+      if (book.title.toLowerCase().includes(searchLower)) suggestions.add(book.title);
+      if (book.authorName.toLowerCase().includes(searchLower)) suggestions.add(book.authorName);
+    });
+    return Array.from(suggestions).slice(0, 10);
   }
 }

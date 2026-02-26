@@ -7,4 +7,6 @@ export interface SearchFilters {
   priceMax?: number;
   isVisible?: boolean;
   aggregate?: boolean;
+  page?: number;
+  size?: number;
 }

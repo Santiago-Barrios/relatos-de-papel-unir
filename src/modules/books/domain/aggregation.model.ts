@@ -9,4 +9,6 @@ export interface AggregationDetails {
 export interface BookSearchResponse {
   books: BookModel[];
   aggregations: Record<string, AggregationDetails[]>;
+  totalElements?: number;
+  totalPages?: number;
 }

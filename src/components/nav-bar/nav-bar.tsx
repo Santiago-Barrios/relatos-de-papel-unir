@@ -1,26 +1,21 @@
-import { Input } from '@/components/ui/input';
 import './nav-bar.scss';
+import { SearchWithSuggestions } from './search-with-suggestions';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useCart } from '@/modules/cart';
 import { BookOpen, MapPinCheck } from 'lucide-react';
 
 export const NavBar = () => {
   const { items } = useCart();
-  const path = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState(searchParams.get('q') || '');
-
-  useEffect(() => {
-    console.log('Daniel location', { path });
-  }, []);
 
   useEffect(() => {
     // Sincronizar el input con los parámetros de búsqueda de la URL
@@ -62,12 +57,6 @@ export const NavBar = () => {
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      handleSearch();
-    }
-  };
-
   return (
     <div className='nav-bar__container__content'>
       <div className='nav-bar__container__content__information'>
@@ -88,13 +77,10 @@ export const NavBar = () => {
           </div>
         </div>
         <div className='nav-bar__container__content__information__search'>
-          <Input
-            type='text'
-            placeholder='Título, Autor o ISBN'
-            style={{ height: '100%' }}
+          <SearchWithSuggestions
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyDown={handleKeyDown}
+            onChange={setSearchTerm}
+            onSearch={handleSearch}
           />
         </div>
       </div>
